@@ -18,7 +18,7 @@ public class LoginPage extends PageObject {
 
     public void clickOnSingIn() {
         $(clickButton).click();
-        waitForSpinner();
+        //waitForSpinner();
     }
 
     public void navigateToLoginPage() {
