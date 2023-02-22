@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"src/test/resources/features/"},
         plugin = {"pretty", "html:target/cucumber.html", "rerun:target/rerun.txt"},
-        tags = "@login2"
+        tags = "@ui"
 )
 
 public class CucumberRunner {

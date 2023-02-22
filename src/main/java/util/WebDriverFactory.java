@@ -34,6 +34,10 @@ public class WebDriverFactory {
         return driver.get();
     }
 
+    public static void setDriver(WebDriver webDriver){
+        driver.set(webDriver);
+    }
+
     public static void quitDriver() {
         System.out.println("driver.hashCode() = " + driver.hashCode());
         driver.get().quit();

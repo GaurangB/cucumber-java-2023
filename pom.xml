@@ -104,6 +104,12 @@
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.picocontainer</groupId>
+            <artifactId>picocontainer</artifactId>
+            <version>2.15</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -123,10 +129,10 @@
                 <version>${maven.surefire}</version>
                 <configuration>
                     <includes>
-                        <include>**/CucumberRunner*.java</include>
+                        <include>**/*Runner.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
-                    <parallel>classes</parallel>
+                    <parallel>methods</parallel>
                     <threadCount>5</threadCount>
                 </configuration>
             </plugin>

@@ -13,29 +13,22 @@ import java.time.Duration;
 import java.util.List;
 
 public class PageObject {
-    protected static WebDriver driver;
+    protected WebDriver driver;
     private static final int seconds = 30;
     protected String baseUrl;
     protected String environment;
     private final By spinner = By.cssSelector("[data-test='spinner']");
 
     PageObject() {
+        driver = WebDriverFactory.getDriver();
         environment = ConfigReader.getConfigProps("environment");
         baseUrl = ConfigReader.getEnvProps("env." + environment + ".url");
-    }
-
-    public static void setup() {
-        driver = WebDriverFactory.getDriver();
         System.out.println("driver.hashCode() = " + driver.hashCode());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));
         driver.manage().window().maximize();
     }
 
-    public static void tearDown() {
-        WebDriverFactory.quitDriver();
-    }
-
-    public static String takeScreenshot(String fileName) {
+    public String takeScreenshot(String fileName) {
 
         TakesScreenshot screenshotDriver = (TakesScreenshot) driver;
         File screenshot = screenshotDriver.getScreenshotAs(OutputType.FILE);
@@ -69,13 +62,13 @@ public class PageObject {
     }
 
     public void waitForSpinner() {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 1; i++) {
             try {
                 Thread.sleep(300);
             } catch (InterruptedException ignored) {
             }
             if ($$(spinner).size() > 0) {
-                waitForElementInvisible(spinner, 120);
+                waitForElementInvisible(spinner, 5);
             }
         }
     }
