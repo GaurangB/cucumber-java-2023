@@ -26,7 +26,7 @@ The test configuration is defined in the `src/test/resources/config.properties` 
 The framework uses hooks defined in `src/test/java/Steps/Hooks/Hooks.java` to perform setup and cleanup tasks. The `@Before` hook is used to log the start of each scenario tagged with `@ui`, while the `@After` hook is used to take a screenshot and attach it to the test report if the scenario fails.
 
 ## Folder structure
-```mermaid
+```
 src/
 ├── main/
 │   └── java/
