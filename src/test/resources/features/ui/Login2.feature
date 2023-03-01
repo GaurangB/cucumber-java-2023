@@ -9,8 +9,8 @@ Feature:login
     Then user navigates to homePage
 
     Examples:
-      | userName | password  |
-      | standard_user    | secret_sauce |
+      | userName      | password     |
+      | standard_user | secret_sauce |
 
   @login4
   Scenario: Verify login feature 4
