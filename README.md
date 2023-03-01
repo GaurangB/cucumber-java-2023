@@ -72,4 +72,4 @@ src/
 `pom.xml`: Contains Maven dependencies and configuration.
 
 ### Author
-This automation test framework was created by @GaurangB.
+This automation test framework was created by [GaurangB](https://github.com/GaurangB)
